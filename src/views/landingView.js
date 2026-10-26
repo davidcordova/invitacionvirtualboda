@@ -52,41 +52,11 @@ export async function renderLandingView(container, guestToken = null) {
   const checkinUrl = getCheckinUrl(guest.id);
   const qrDataUrl = await generateQrDataUrl(checkinUrl, { width: 200, margin: 1 });
 
-  // If already confirmed or opened previously, drawer can be visible or toggled
+  // If already confirmed, drawer can be visible or toggled
   const isAlreadyConfirmed = guest.status === 'confirmada' || guest.status === 'ingreso';
-  const isEnvelopeAlreadyOpened = sessionStorage.getItem('boda_envelope_opened') === 'true';
 
   container.innerHTML = `
     <div class="wedding-body">
-      <!-- ==========================================================================
-           PANTALLA DE ENTRADA: SOBRE VIRTUAL CON SELLO DE LACRE DORADO
-           Garantiza la reproducción simultánea de música y pasarela sin bloqueos del navegador
-           ========================================================================== -->
-      ${!isEnvelopeAlreadyOpened ? `
-        <div class="virtual-envelope-gate" id="virtual-envelope-gate">
-          <div class="envelope-card-inner">
-            <div class="envelope-stamp-badge">
-              <img src="/assets/clickandlove/media/wax-seal.png" alt="Sello de Lacre Carlos y Jackie" class="wax-seal-entry-img">
-            </div>
-            
-            <div class="envelope-entry-subtitle">NUESTRA BODA CIVIL & RECEPCIÓN</div>
-            <h2 class="envelope-entry-names">Carlos & Jackie</h2>
-            <div class="envelope-entry-date">26 • DICIEMBRE • 2026</div>
-
-            <div class="envelope-entry-divider"></div>
-
-            <div class="envelope-entry-for">INVITACIÓN DE HONOR PARA:</div>
-            <div class="envelope-entry-guest">${guest.name}</div>
-            <div class="envelope-entry-passes">Pase para ${guest.passes} persona${guest.passes > 1 ? 's' : ''} • ${guest.table || 'Mesa asignada'}</div>
-
-            <button type="button" class="btn-open-envelope" id="btn-open-envelope" title="Abrir invitación y disfrutar la experiencia">
-              <span class="btn-open-icon">✉️</span> Abrir Invitación & Escuchar Música 🎵
-            </button>
-            <div class="envelope-entry-hint">Toca aquí o en cualquier parte para ingresar</div>
-          </div>
-        </div>
-      ` : ''}
-
       <div class="paper-strip">
 
         <!-- ==========================================================================
@@ -436,11 +406,9 @@ San Juan de Lurigancho</div>
   // Attach event handlers
   attachSkillLandingEvents(container, guest);
 
-  // Initialize auto-scroll pasarela controller
+  // Initialize auto-scroll pasarela controller and launch synchronized tour
   autoScrollController.init(container);
-  if (isEnvelopeAlreadyOpened) {
-    autoScrollController.startAutoplayTour({ delayMs: 800 });
-  }
+  autoScrollController.startSynchronizedTour({ delayMs: 600 });
 }
 
 function startCountdown() {
@@ -476,44 +444,6 @@ function attachSkillLandingEvents(container, guest) {
   // Mark guest viewed in storage
   storage.markGuestViewed(guest.id);
 
-  // Sello y Sobre Virtual de Entrada (Garantiza reproducción inmediata de música y pasarela)
-  const envelopeGate = container.querySelector('#virtual-envelope-gate');
-  const btnOpenEnvelope = container.querySelector('#btn-open-envelope');
-
-  const openEnvelopeExperience = () => {
-    if (!envelopeGate || envelopeGate.classList.contains('opened')) return;
-
-    // Guardar estado en sessionStorage para no bloquear futuras navegaciones internas
-    sessionStorage.setItem('boda_envelope_opened', 'true');
-
-    // 1. Sonido de lacre rompiéndose
-    try {
-      audioEngine.playWaxBreakSound();
-    } catch(e) {}
-
-    // 2. Iniciar canción de la boda (Ed Sheeran) en bucle perpetuo - 100% autorizado por el navegador
-    audioEngine.play().catch(err => {
-      console.warn('Audio play error:', err);
-    });
-
-    // 3. Animación de apertura suave del sobre
-    envelopeGate.classList.add('opened');
-
-    // 4. Iniciar la pasarela automáticamente desde arriba
-    setTimeout(() => {
-      autoScrollController.start(true);
-    }, 450);
-  };
-
-  btnOpenEnvelope?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    openEnvelopeExperience();
-  });
-
-  envelopeGate?.addEventListener('click', () => {
-    openEnvelopeExperience();
-  });
-
   // Widget "¡Dale play!"
   const dalePlayWidget = container.querySelector('#btn-dale-play');
   const dalePlayLabel = container.querySelector('#dale-play-label');
@@ -539,11 +469,13 @@ function attachSkillLandingEvents(container, guest) {
   });
 
   dalePlayWidget?.addEventListener('click', () => {
-    audioEngine.toggleMusic();
+    if (!autoScrollController.isActive) {
+      audioEngine.play().catch(() => {});
+      autoScrollController.start(false);
+    } else {
+      audioEngine.toggleMusic();
+    }
   });
-
-  // Iniciar reproducción automática según configuración y políticas del navegador
-  audioEngine.startAutoplayIfConfigured();
 
   // Calendar Event Button (.ics)
   const calBtn = container.querySelector('#btn-add-cal');

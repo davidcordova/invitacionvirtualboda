@@ -248,28 +248,61 @@ class AutoScrollController {
     }
   }
 
-  startAutoplayTour({ delayMs = 1200 } = {}) {
-    // 1. Immediately trigger background music autoplay
-    try {
-      audioEngine.startAutoplayIfConfigured();
-    } catch (e) {}
-
-    // 2. Clear any active autoplay timer
+  startSynchronizedTour({ delayMs = 600 } = {}) {
+    // 1. Clear any active autoplay timer
     if (this.autoplayTimer) {
       clearTimeout(this.autoplayTimer);
       this.autoplayTimer = null;
     }
 
-    // 3. Ensure starting at top of the invitation
+    // 2. Ensure starting at top of the invitation
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // 4. Start smooth runway scroll after brief luxury delay
-    this.autoplayTimer = setTimeout(() => {
-      this.autoplayTimer = null;
+    // Function to launch the runway glide
+    const launchRunway = () => {
       if (!this.isActive) {
         this.start(false);
       }
-    }, delayMs);
+    };
+
+    // 3. Attempt immediate unmuted audio playback
+    audioEngine.play().then(started => {
+      if (started) {
+        // Autoplay allowed by browser! Start runway together with music
+        this.autoplayTimer = setTimeout(() => {
+          this.autoplayTimer = null;
+          launchRunway();
+        }, delayMs);
+      } else {
+        // Autoplay requires user gesture:
+        // Arm gesture so the first tap anywhere starts BOTH in perfect sync
+        audioEngine.armAutoplayOnFirstGesture(() => {
+          launchRunway();
+        });
+
+        // Also if user taps/clicks anywhere on the document, start both together
+        const onFirstGesture = () => {
+          ['pointerdown', 'touchstart', 'mousedown', 'keydown', 'click'].forEach(ev => {
+            window.removeEventListener(ev, onFirstGesture, { capture: true });
+          });
+          audioEngine.play().catch(() => {});
+          launchRunway();
+        };
+
+        ['pointerdown', 'touchstart', 'mousedown', 'keydown', 'click'].forEach(ev => {
+          window.addEventListener(ev, onFirstGesture, { capture: true, once: true });
+        });
+      }
+    }).catch(() => {
+      audioEngine.armAutoplayOnFirstGesture(() => {
+        launchRunway();
+      });
+    });
+  }
+
+  // Alias for backward compatibility
+  startAutoplayTour(opts) {
+    this.startSynchronizedTour(opts);
   }
 
   start(fromTop = false) {

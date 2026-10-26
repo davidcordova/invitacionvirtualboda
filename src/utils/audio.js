@@ -60,11 +60,21 @@ class RomanticAudioEngine {
   initAudioElement() {
     if (typeof window === 'undefined') return;
     try {
-      this.audioElement = new Audio();
-      this.audioElement.src = this.currentUrl;
+      let audio = document.getElementById('wedding-audio-element');
+      if (!audio) {
+        audio = document.createElement('audio');
+        audio.id = 'wedding-audio-element';
+        audio.style.display = 'none';
+        const mount = document.getElementById('audio-engine-mount') || document.body;
+        mount.appendChild(audio);
+      }
+      this.audioElement = audio;
+      this.audioElement.src = this.currentUrl || '/assets/musica.mp3';
       this.audioElement.loop = true; // REPRODUCCIÓN EN BUCLE PERPETUO
       this.audioElement.volume = this.currentVolume;
       this.audioElement.preload = 'auto';
+      this.audioElement.setAttribute('playsinline', '');
+      this.audioElement.setAttribute('webkit-playsinline', '');
 
       this.audioElement.addEventListener('play', () => {
         this.isPlaying = true;
@@ -256,13 +266,14 @@ class RomanticAudioEngine {
   }
 
   async play() {
-    if (this.isPlaying) return true;
+    if (this.isPlaying && this.audioElement && !this.audioElement.paused) return true;
 
     // 1. Try playing HTML5 audio (MP3 / configured URL)
     if (this.audioElement) {
       try {
         const targetSrc = this.currentUrl || MUSIC_CONFIG.url || '/assets/musica.mp3';
-        if (this.audioElement.src !== new URL(targetSrc, window.location.href).href) {
+        const targetHref = new URL(targetSrc, window.location.href).href;
+        if (!this.audioElement.src || this.audioElement.src !== targetHref) {
           this.audioElement.src = targetSrc;
         }
         await this.audioElement.play();
@@ -272,11 +283,10 @@ class RomanticAudioEngine {
         return true;
       } catch (err) {
         if (err.name === 'NotAllowedError') {
-          // Autoplay blocked by browser policy: arm gesture listener
-          this.armAutoplayOnFirstGesture();
+          // Autoplay blocked by browser policy without user gesture
           return false;
         }
-        // File not found or network error: fallback to synthesizer
+        console.warn('[AudioEngine] HTML5 Audio playback error, fallback to synth:', err);
         this.startMelody();
         return true;
       }
@@ -307,36 +317,51 @@ class RomanticAudioEngine {
     }
   }
 
-  armAutoplayOnFirstGesture() {
-    if (this.hasUserInteracted) return;
+  armAutoplayOnFirstGesture(onSuccessCallback = null) {
+    if (this.isPlaying) {
+      if (onSuccessCallback) onSuccessCallback();
+      return;
+    }
+
+    // ONLY true user gestures — NEVER 'scroll' or 'wheel' which trigger synthetically
+    const userEvents = ['pointerdown', 'touchstart', 'mousedown', 'keydown', 'click'];
+    let completed = false;
 
     const triggerPlay = () => {
-      if (this.hasUserInteracted) return;
-      this.hasUserInteracted = true;
+      if (completed || this.isPlaying) return;
 
-      ['click', 'touchstart', 'scroll', 'keydown', 'pointerdown', 'wheel'].forEach(ev => {
-        window.removeEventListener(ev, triggerPlay, { passive: true });
-      });
-
-      if (!this.isPlaying) {
-        this.play().catch(() => {});
-      }
+      this.play().then(started => {
+        if (started) {
+          completed = true;
+          this.hasUserInteracted = true;
+          userEvents.forEach(ev => {
+            window.removeEventListener(ev, triggerPlay, { capture: true });
+            document.removeEventListener(ev, triggerPlay, { capture: true });
+          });
+          if (onSuccessCallback) {
+            try { onSuccessCallback(); } catch(e) {}
+          }
+        }
+      }).catch(() => {});
     };
 
-    ['click', 'touchstart', 'scroll', 'keydown', 'pointerdown', 'wheel'].forEach(ev => {
-      window.addEventListener(ev, triggerPlay, { once: true, passive: true });
+    userEvents.forEach(ev => {
+      window.addEventListener(ev, triggerPlay, { capture: true, passive: true });
+      document.addEventListener(ev, triggerPlay, { capture: true, passive: true });
     });
   }
 
-  startAutoplayIfConfigured() {
+  startAutoplayIfConfigured(onSuccessCallback = null) {
     if (!MUSIC_CONFIG.autoplay) return;
 
     this.play().then(started => {
-      if (!started) {
-        this.armAutoplayOnFirstGesture();
+      if (started) {
+        if (onSuccessCallback) onSuccessCallback();
+      } else {
+        this.armAutoplayOnFirstGesture(onSuccessCallback);
       }
     }).catch(() => {
-      this.armAutoplayOnFirstGesture();
+      this.armAutoplayOnFirstGesture(onSuccessCallback);
     });
   }
 
