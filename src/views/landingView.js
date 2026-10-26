@@ -406,8 +406,9 @@ San Juan de Lurigancho</div>
   // Attach event handlers
   attachSkillLandingEvents(container, guest);
 
-  // Initialize auto-scroll pasarela controller
+  // Initialize auto-scroll pasarela controller & start automatic tour + music
   autoScrollController.init(container);
+  autoScrollController.startAutoplayTour({ delayMs: 1200 });
 }
 
 function startCountdown() {

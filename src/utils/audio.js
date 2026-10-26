@@ -261,8 +261,9 @@ class RomanticAudioEngine {
     // 1. Try playing HTML5 audio (MP3 / configured URL)
     if (this.audioElement) {
       try {
-        if (this.audioElement.src !== new URL(MUSIC_CONFIG.url, window.location.href).href) {
-          this.audioElement.src = MUSIC_CONFIG.url;
+        const targetSrc = this.currentUrl || MUSIC_CONFIG.url || '/assets/musica.mp3';
+        if (this.audioElement.src !== new URL(targetSrc, window.location.href).href) {
+          this.audioElement.src = targetSrc;
         }
         await this.audioElement.play();
         this.isPlaying = true;
@@ -313,16 +314,16 @@ class RomanticAudioEngine {
       if (this.hasUserInteracted) return;
       this.hasUserInteracted = true;
 
-      ['click', 'touchstart', 'scroll', 'keydown'].forEach(ev => {
+      ['click', 'touchstart', 'scroll', 'keydown', 'pointerdown', 'wheel'].forEach(ev => {
         window.removeEventListener(ev, triggerPlay, { passive: true });
       });
 
-      if (MUSIC_CONFIG.autoplay && !this.isPlaying) {
-        this.play();
+      if (!this.isPlaying) {
+        this.play().catch(() => {});
       }
     };
 
-    ['click', 'touchstart', 'scroll', 'keydown'].forEach(ev => {
+    ['click', 'touchstart', 'scroll', 'keydown', 'pointerdown', 'wheel'].forEach(ev => {
       window.addEventListener(ev, triggerPlay, { once: true, passive: true });
     });
   }

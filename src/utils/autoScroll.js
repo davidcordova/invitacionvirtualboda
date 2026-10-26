@@ -248,7 +248,36 @@ class AutoScrollController {
     }
   }
 
+  startAutoplayTour({ delayMs = 1200 } = {}) {
+    // 1. Immediately trigger background music autoplay
+    try {
+      audioEngine.startAutoplayIfConfigured();
+    } catch (e) {}
+
+    // 2. Clear any active autoplay timer
+    if (this.autoplayTimer) {
+      clearTimeout(this.autoplayTimer);
+      this.autoplayTimer = null;
+    }
+
+    // 3. Ensure starting at top of the invitation
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // 4. Start smooth runway scroll after brief luxury delay
+    this.autoplayTimer = setTimeout(() => {
+      this.autoplayTimer = null;
+      if (!this.isActive) {
+        this.start(false);
+      }
+    }, delayMs);
+  }
+
   start(fromTop = false) {
+    if (this.autoplayTimer) {
+      clearTimeout(this.autoplayTimer);
+      this.autoplayTimer = null;
+    }
+
     this.isActive = true;
     this.isPaused = false;
     this.isMinimized = false;
@@ -341,6 +370,11 @@ class AutoScrollController {
   }
 
   stop() {
+    if (this.autoplayTimer) {
+      clearTimeout(this.autoplayTimer);
+      this.autoplayTimer = null;
+    }
+
     this.isActive = false;
     this.isPaused = false;
     this.isMinimized = false;
