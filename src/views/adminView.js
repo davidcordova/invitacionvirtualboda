@@ -238,7 +238,7 @@ export function renderAdminView(container, options = {}) {
           </div>
 
           <!-- Bottom Summary Bar -->
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; font-size: 0.82rem; color: var(--admin-text-muted);">
+          <div class="admin-table-footer">
             <span>Mostrando <strong>${filteredGuests.length}</strong> de <strong>${guests.length}</strong> invitados registrados</span>
             <span>📍 Recepciones Villa Venecia — Sábado 26 de Diciembre</span>
           </div>

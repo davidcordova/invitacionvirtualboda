@@ -985,14 +985,36 @@
   gap: 0.5rem;
 }
 
+.admin-table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--admin-text-muted);
+}
+
 @media (max-width: 768px) {
   .admin-navbar-inner {
     flex-direction: column;
     align-items: flex-start;
+    padding: 0.75rem 1rem;
+  }
+  .admin-nav-tabs {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
   }
   .admin-user-profile {
     width: 100%;
     justify-content: space-between;
+  }
+  .admin-container {
+    padding: 0 1rem;
+    margin-top: 1rem;
   }
   .admin-toolbar-row-top {
     flex-direction: column;
@@ -1004,6 +1026,71 @@
   .admin-action-buttons {
     width: 100%;
     justify-content: flex-start;
+  }
+  .admin-filter-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.4rem;
+  }
+  .admin-filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-tab-btn {
+    flex-shrink: 0;
+  }
+  .admin-table-container {
+    -webkit-overflow-scrolling: touch;
+  }
+  .admin-table th,
+  .admin-table td {
+    padding: 0.75rem 0.85rem;
+  }
+  .admin-modal-overlay {
+    padding: 1rem 0.75rem;
+  }
+  .admin-modal-box {
+    max-height: 92vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-container {
+    padding: 0 0.75rem;
+  }
+  .admin-action-buttons {
+    gap: 0.35rem;
+  }
+  .btn-admin {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.82rem;
+  }
+  .admin-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .admin-table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  .admin-modal-footer {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+  .admin-modal-footer .btn-admin {
+    width: 100%;
+    justify-content: center;
+  }
+  .auth-page-container {
+    padding: 1rem 0.75rem;
+  }
+  .auth-card {
+    padding: 1.5rem 1.1rem;
+    border-radius: 12px;
+  }
+  .auth-title {
+    font-size: 1.25rem;
   }
 }
 

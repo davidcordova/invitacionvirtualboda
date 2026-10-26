@@ -134,6 +134,8 @@
   border-bottom: 1px solid rgba(64, 64, 64, 0.32);
   text-align: center;
   position: relative;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .guest-letterpress-label {
@@ -153,6 +155,8 @@
   color: var(--ink-charcoal);
   line-height: 1.25;
   margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .guest-letterpress-meta {
@@ -442,6 +446,8 @@
   line-height: 1.44em;
   margin-bottom: 16px;
   white-space: pre-line;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .location-btn-row {
@@ -749,6 +755,8 @@
   max-width: 401px;
   margin: 0 auto;
   white-space: pre-line;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .copy-inline-btn {
@@ -1117,8 +1125,15 @@
 }
 
 @media (max-width: 480px) {
+  .hero-photo-container {
+    height: 440px;
+  }
+  .hero-titles {
+    margin-top: -95px;
+    padding: 0 12px 10px;
+  }
   .couple-names-hero {
-    font-size: 54px;
+    font-size: 52px;
   }
   .section-script-title,
   .itinerary-title,
@@ -1127,10 +1142,135 @@
   .adults-title,
   .rsvp-title,
   .closing-names {
-    font-size: 46px;
+    font-size: 44px;
   }
   .date-main {
-    font-size: 30px;
+    font-size: 28px;
+    letter-spacing: 0.01em;
+  }
+  .story-paragraph,
+  .ceremony-address,
+  .dresscode-text,
+  .gifts-note,
+  .adults-text,
+  .rsvp-text {
+    font-size: 18px;
+  }
+  .gifts-accounts {
+    font-size: 17px;
+  }
+  /* Timeline responsive scaling */
+  .tl-wash-wrap {
+    width: 100%;
+    max-width: 135px;
+    height: auto;
+    aspect-ratio: 181 / 172;
+  }
+  .tl-rings-box-img {
+    width: 78%;
+    height: auto;
+    margin: 8px auto 0;
+  }
+  .tl-plate-img {
+    width: 100%;
+    max-width: 135px;
+    height: auto;
+  }
+  .tl-flutes-img {
+    width: 100%;
+    max-width: 110px;
+    height: auto;
+    margin: 0 auto 8px;
+  }
+  .tl-disco-wrap {
+    width: 100%;
+    max-width: 135px;
+    height: auto;
+    aspect-ratio: 189 / 185;
+  }
+  .tl-disco-img {
+    width: 100%;
+    height: auto;
+  }
+  .tl-label {
+    font-size: 16px;
+    line-height: 1.3em;
+  }
+  /* Swatches responsive wrap */
+  .swatches-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .swatch-img {
+    width: 82px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 380px) {
+  .content-col {
+    padding: 0 12px;
+  }
+  .couple-names-hero {
+    font-size: 44px;
+  }
+  .section-script-title,
+  .itinerary-title,
+  .dresscode-title,
+  .gifts-title,
+  .adults-title,
+  .rsvp-title,
+  .closing-names {
+    font-size: 38px;
+  }
+  .date-main {
+    font-size: 22px;
+  }
+  .date-intro {
+    font-size: 18px;
+  }
+  .nos-casamos {
+    font-size: 18px;
+  }
+  .dale-play-widget {
+    transform: scale(0.92);
+    transform-origin: center center;
+    margin: 0 auto 12px;
+  }
+  .tickcounter-box {
+    width: 100%;
+    max-width: 250px;
+    gap: 2px;
+  }
+  .tc-val {
+    font-size: 26px;
+  }
+  .tc-unit:not(:last-child)::after {
+    font-size: 22px;
+    right: -3px;
+  }
+  .location-btn-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-editorial-rect {
+    width: 100%;
+    max-width: 220px;
+  }
+  .editorial-radio-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .editorial-rsvp-drawer {
+    padding: 16px 12px;
+  }
+  .editorial-qr-pass {
+    padding: 14px 10px;
+  }
+  .qr-canvas-frame img {
+    width: 140px !important;
+    height: 140px !important;
   }
 }
 
