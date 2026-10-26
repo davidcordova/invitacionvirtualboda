@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Tipografías Originales — Línea Gráfica "Claudia y Óscar" (Click & Love)
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Eyesome Script';
+  src: url('./Eyesome_Script_REGULAR_400.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RoxboroughCF';
+  src: url('./RoxboroughCF_THIN_100.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RoxboroughCF';
+  src: url('./RoxboroughCF_LIGHT_300.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RoxboroughCF';
+  src: url('./RoxboroughCF_REGULAR_400.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RoxboroughCF';
+  src: url('./RoxboroughCF_MEDIUM_500.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RoxboroughCF';
+  src: url('./RoxboroughCF_BOLD_700.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./Lato_LIGHT_300.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brittany';
+  src: url('./Brittany_REGULAR_400.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Georgia Pro';
+  src: url('./Georgia_Pro_REGULAR_400.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
