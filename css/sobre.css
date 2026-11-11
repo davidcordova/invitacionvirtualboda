@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Sobre Digital & Generador de PDF — Carlos & Jackie Wedding (sobre.php)
+   ========================================================================== */
+
+.sobre-page {
+  min-height: 100vh;
+  background-color: #f5f2eb;
+  background-image: url('../assets/paper-texture.jpg');
+  background-repeat: repeat;
+  color: #404040;
+  font-family: 'RoxboroughCF', 'Cormorant Garamond', Georgia, serif;
+  padding: 32px 16px 64px;
+}
+
+.sobre-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.sobre-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(64, 64, 64, 0.2);
+}
+
+.sobre-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sobre-brand-title {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 40px;
+  color: #404040;
+  line-height: 1;
+}
+
+.sobre-brand-sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7b6a48;
+}
+
+.sobre-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: 1px solid #404040;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #404040;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sobre-back-link:hover {
+  background: #404040;
+  color: #ffffff;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sobre-preview-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(184, 145, 70, 0.45);
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(64, 50, 25, 0.1);
+  text-align: center;
+}
+
+.sobre-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7b6a48;
+}
+
+.sobre-canvas-mount {
+  width: 100%;
+  background: #faf8f5;
+  border: 1px solid rgba(196, 142, 51, 0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.sobre-canvas-mount canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sobre-controls-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(64, 64, 64, 0.25);
+  padding: 24px 22px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.sobre-controls-title {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #131313;
+  margin-bottom: 8px;
+}
+
+.sobre-controls-desc {
+  font-size: 16px;
+  color: #4c4c4c;
+  margin-bottom: 20px;
+  line-height: 1.45;
+}
+
+.sobre-field {
+  margin-bottom: 14px;
+}
+
+.sobre-field label {
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #404040;
+  margin-bottom: 6px;
+}
+
+.sobre-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(64, 64, 64, 0.45);
+  background: #ffffff;
+  font-family: 'RoxboroughCF', serif;
+  font-size: 16px;
+  color: #131313;
+  outline: none;
+}
+
+.sobre-input:focus {
+  border-color: #b89146;
+}
+
+.sobre-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-sobre-action {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #404040;
+  background: transparent;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #404040;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-sobre-action:hover {
+  background: #404040;
+  color: #ffffff;
+}
+
+.btn-sobre-action.primary {
+  background: #b89146;
+  border-color: #b89146;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.btn-sobre-action.primary:hover {
+  background: #9d7b37;
+  border-color: #9d7b37;
+}
+
+.btn-sobre-action.whatsapp {
+  background: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.btn-sobre-action.whatsapp:hover {
+  background: #1EBE5D;
+  border-color: #1EBE5D;
+}
+

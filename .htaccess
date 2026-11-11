@@ -1,0 +1,34 @@
+# ============================================================================
+# Configuración Apache / cPanel — Invitación Virtual Carlos & Jackie
+# ============================================================================
+
+DirectoryIndex index.php index.html
+AddDefaultCharset UTF-8
+
+<IfModule mod_headers.c>
+  Header set Permissions-Policy "autoplay=(self *)"
+</IfModule>
+
+# Tipos MIME para fuentes editoriales y audio
+<IfModule mod_mime.c>
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType audio/mpeg .mp3
+  AddType image/svg+xml .svg
+</IfModule>
+
+# Caché de recursos estáticos para carga rápida en móviles
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType audio/mpeg "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Evitar listado de directorios
+Options -Indexes
+

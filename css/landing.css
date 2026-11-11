@@ -1,0 +1,1829 @@
+/* ==========================================================================
+   Click & Love Wedding Style — Carlos & Jackie (Fiel al Original 100%)
+   Fuentes: Eyesome Script, RoxboroughCF, Lato
+   Pliego vertical de papel verjurado: 516px con textura continua
+   ========================================================================== */
+
+:root {
+  --outer-canvas-bg: #ffffff;
+  --paper-base: #f5f2eb;
+  --paper-cream-node: #fdf6ec;
+  --ink-charcoal: #404040;
+  --ink-body: #4c4c4c;
+  --ink-deep: #131313;
+  --ink-black: #000000;
+  --sage-watercolor: #72826c;
+  --wax-gold: #b89146;
+  --wax-gold-dark: #7b6a48;
+
+  /* Paleta Artesanal de Pan de Oro (Gold Leaf / Oro Envejecido y Bruñido) */
+  --gold-leaf-light: #f9e8a9;
+  --gold-leaf-mid: #d4af37;
+  --gold-leaf-warm: #c59b45;
+  --gold-leaf-deep: #8f6822;
+  --gold-leaf-gradient: linear-gradient(
+    135deg,
+    #8f6822 0%,
+    #e5c473 16%,
+    #b58936 32%,
+    #fbf0c4 49%,
+    #c59b45 64%,
+    #e9cb7e 82%,
+    #88611d 100%
+  );
+  --gold-leaf-border-gradient: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(181, 137, 54, 0.35) 15%,
+    #d4af37 50%,
+    rgba(181, 137, 54, 0.35) 85%,
+    transparent 100%
+  );
+}
+
+/* Base Body */
+.wedding-body {
+  background-color: var(--outer-canvas-bg);
+  color: var(--ink-body);
+  font-family: 'RoxboroughCF', 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.44;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   PLIEGO VERTICAL CONTINUO DE PAPEL VERJURADO CON FILETES DE PAN DE ORO
+   ========================================================================== */
+.paper-strip {
+  width: 100%;
+  max-width: 516px;
+  margin: 0 auto;
+  background-color: var(--paper-base);
+  background-image: url('../assets/paper-texture.jpg');
+  background-repeat: repeat-y;
+  background-size: 516px auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 45px rgba(64, 48, 20, 0.12);
+  border-left: 2px solid rgba(197, 155, 69, 0.45);
+  border-right: 2px solid rgba(197, 155, 69, 0.45);
+}
+
+/* Filete interior continuo de pan de oro a lo largo del pliego */
+.paper-strip::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  border: 1px solid rgba(197, 155, 69, 0.38);
+  box-shadow: inset 0 0 0 2px rgba(249, 232, 169, 0.18);
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Ornamentos y separadores de Pan de Oro */
+.gold-leaf-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px auto 18px;
+  max-width: 310px;
+  opacity: 0.92;
+}
+
+.gold-leaf-divider-line {
+  flex: 1;
+  height: 1.5px;
+  background: var(--gold-leaf-border-gradient);
+}
+
+.gold-leaf-divider-icon {
+  color: #b88b3a;
+  font-size: 15px;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(249, 232, 169, 0.8);
+}
+
+.gold-leaf-ornament-svg {
+  width: 170px;
+  height: 24px;
+  display: block;
+  margin: 10px auto 16px;
+  filter: drop-shadow(0 1px 2px rgba(143, 104, 34, 0.25));
+}
+
+.content-col {
+  width: 100%;
+  max-width: 425px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Tipografías Click & Love */
+.font-script {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-serif {
+  font-family: 'RoxboroughCF', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-btn {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+/* ==========================================================================
+   MARCOS ARTESANALES DE PAN DE ORO (GOLD LEAF FRAMES) CON PASPARTÚ BLANCO
+   ========================================================================== */
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 32px 22px 8px;
+}
+
+.hero-titles {
+  margin-top: 18px;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 20px 10px;
+}
+
+.pasted-photo-card {
+  /* Marco exterior artesanal tallado en Pan de Oro + Paspartú blanco cálido */
+  background:
+    linear-gradient(#fdfcf9, #faf7f0) padding-box,
+    var(--gold-leaf-gradient) border-box;
+  padding: 15px 15px 26px 15px;
+  border: 4px solid transparent;
+  box-shadow:
+    /* Relieve metálico exterior del pan de oro */
+    0 0 0 1px rgba(136, 97, 29, 0.55),
+    /* Filete interior de pan de oro sobre el paspartú blanco */
+    inset 0 0 0 2px rgba(212, 175, 55, 0.55),
+    inset 0 0 12px rgba(184, 139, 58, 0.12),
+    /* Sombra realista de marco artesanal apoyado sobre el papel */
+    0 12px 28px rgba(48, 36, 16, 0.22),
+    0 3px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 26px auto;
+  max-width: 395px;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.pasted-photo-card.hero-pasted-card {
+  max-width: 425px;
+  margin: 0 auto 6px;
+  padding: 16px 16px 28px 16px;
+  border-width: 5px;
+}
+
+/* Cinta artesanal con destellos de pan de oro en la parte superior */
+.pasted-photo-card.with-tape::before {
+  content: '';
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.6deg);
+  width: 96px;
+  height: 23px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 250, 235, 0.82) 0%,
+    rgba(245, 226, 170, 0.65) 50%,
+    rgba(255, 250, 235, 0.82) 100%
+  );
+  border-top: 1px solid rgba(212, 175, 55, 0.55);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.55);
+  border-left: 1.5px dashed rgba(175, 135, 55, 0.55);
+  border-right: 1.5px dashed rgba(175, 135, 55, 0.55);
+  box-shadow: 0 2px 5px rgba(90, 65, 20, 0.14);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.pasted-photo-card.with-tape.tape-right::before {
+  transform: translateX(-50%) rotate(2deg);
+}
+
+/* Esquineros de filigrana de pan de oro dentro del marco */
+.pasted-photo-card::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(197, 155, 69, 0.42);
+  background:
+    linear-gradient(135deg, #c59b45 6px, transparent 6px) top left,
+    linear-gradient(225deg, #c59b45 6px, transparent 6px) top right,
+    linear-gradient(315deg, #c59b45 6px, transparent 6px) bottom right,
+    linear-gradient(45deg, #c59b45 6px, transparent 6px) bottom left;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Ligeras rotaciones orgánicas como cuadros/fotos puestos a mano */
+.pasted-photo-card.tilt-left {
+  transform: rotate(-1.4deg);
+}
+
+.pasted-photo-card.tilt-right {
+  transform: rotate(1.4deg);
+}
+
+.pasted-photo-card.tilt-subtle-left {
+  transform: rotate(-0.8deg);
+}
+
+.pasted-photo-card.tilt-subtle-right {
+  transform: rotate(0.9deg);
+}
+
+.pasted-photo-card:hover {
+  transform: rotate(0deg) translateY(-4px) scale(1.015);
+  box-shadow:
+    0 0 0 1px rgba(136, 97, 29, 0.75),
+    inset 0 0 0 2px rgba(212, 175, 55, 0.75),
+    0 18px 36px rgba(48, 36, 16, 0.28),
+    0 0 18px rgba(212, 175, 55, 0.25);
+  z-index: 5;
+}
+
+/* Bisel interno de pan de oro abrazando directamente la fotografía */
+.pasted-photo-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: #ebe6dc;
+  position: relative;
+  border: 2px solid #c59b45;
+  box-shadow:
+    0 0 0 1px rgba(143, 104, 34, 0.35),
+    inset 0 0 8px rgba(0, 0, 0, 0.12);
+}
+
+.pasted-photo-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.pasted-photo-card.hero-pasted-card .pasted-photo-img-wrap img {
+  max-height: 360px;
+  object-position: center;
+}
+
+.pasted-photo-img-wrap.aspect-vertical img {
+  max-height: 440px;
+  object-position: center;
+}
+
+.pasted-photo-img-wrap.aspect-landscape img {
+  max-height: 310px;
+  object-position: center;
+}
+
+.pasted-photo-caption {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 27px;
+  color: #4a3b22;
+  margin-top: 11px;
+  line-height: 1.05;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Álbum / Collage de momentos pegados */
+.moments-album-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.moments-duo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.moments-duo-grid .pasted-photo-card {
+  margin: 0;
+  padding: 10px 10px 18px 10px;
+  border-width: 3.5px;
+}
+
+.moments-duo-grid .pasted-photo-img-wrap img {
+  height: 195px;
+  object-fit: cover;
+}
+
+.moments-duo-grid .pasted-photo-caption {
+  font-size: 21px;
+  margin-top: 8px;
+}
+
+@media (max-width: 440px) {
+  .moments-duo-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .moments-duo-grid .pasted-photo-card {
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 12px 12px 22px 12px;
+  }
+  .moments-duo-grid .pasted-photo-img-wrap img {
+    height: auto;
+    max-height: 320px;
+  }
+}
+
+.nos-casamos {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 400;
+  color: var(--ink-charcoal);
+  text-transform: uppercase;
+  line-height: 1.39em;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+}
+
+.couple-names-hero {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 64px;
+  color: var(--ink-charcoal);
+  line-height: 0.96em;
+  font-weight: 400;
+  white-space: pre-line;
+  margin-bottom: 24px;
+}
+
+/* Tarjeta de Invitado Impresa en el Pliego (Enmarcada en Pan de Oro Artesanal) */
+.guest-letterpress-box {
+  max-width: 405px;
+  margin: 6px auto 28px;
+  padding: 20px 22px;
+  background: rgba(255, 252, 245, 0.55);
+  border-top: 2px solid #c59b45;
+  border-bottom: 2px solid #c59b45;
+  box-shadow:
+    inset 0 3px 0 -1px rgba(212, 175, 55, 0.45),
+    inset 0 -3px 0 -1px rgba(212, 175, 55, 0.45),
+    0 6px 18px rgba(143, 104, 34, 0.08);
+  text-align: center;
+  position: relative;
+}
+
+.guest-letterpress-label {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #8f6822;
+  margin-bottom: 6px;
+}
+
+.guest-letterpress-name {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink-charcoal);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.guest-letterpress-meta {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--ink-body);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.guest-letterpress-note {
+  font-family: 'RoxboroughCF', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-body);
+  margin-top: 6px;
+}
+
+/* Primer Retrato en Acuarela con Bordes Esfumados Nube */
+.watercolor-portrait-frame {
+  width: 100%;
+  max-width: 440px;
+  margin: 10px auto 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.watercolor-portrait-frame img {
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.watercolor-portrait-frame:hover img {
+  transform: scale(1.02);
+}
+
+/* Reproductor Dibujado a Mano "¡Dale play!" */
+.dale-play-widget {
+  position: relative;
+  width: 309px;
+  height: 125px;
+  margin: 6px auto 18px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.dale-play-widget:hover {
+  transform: scale(1.02);
+}
+
+.dale-play-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dale-play-arrow {
+  position: absolute;
+  top: 48px;
+  left: 36px;
+  width: 44px;
+  height: 32px;
+  pointer-events: none;
+}
+
+.arrow-drawn-vector {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dale-play-widget.is-playing {
+  animation: gentlePulse 2.8s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.dale-play-text {
+  position: absolute;
+  top: 33px;
+  left: 49px;
+  width: 207px;
+  text-align: center;
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 28px;
+  line-height: 1.04em;
+  color: var(--ink-body);
+  pointer-events: none;
+}
+
+.story-paragraph {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 400;
+  color: var(--ink-body);
+  line-height: 1.39em;
+  max-width: 425px;
+  margin: 0 auto 36px;
+}
+
+/* ==========================================================================
+   SECCIÓN 2: FAMILIA Y BENDICIONES
+   ========================================================================== */
+.family-section {
+  padding: 18px 0 36px;
+}
+
+.family-block {
+  margin-bottom: 24px;
+}
+
+.family-block:last-child {
+  margin-bottom: 0;
+}
+
+.family-heading {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 700;
+  color: var(--ink-body);
+  line-height: 1.39em;
+  margin-bottom: 8px;
+}
+
+.family-names {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--ink-body);
+  line-height: 1.44em;
+}
+
+/* ==========================================================================
+   SECCIÓN 3: FECHA Y CUENTA REGRESIVA
+   ========================================================================== */
+.date-section {
+  padding: 24px 0 38px;
+}
+
+.date-intro {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 700;
+  color: var(--ink-body);
+  line-height: 1.39em;
+  margin-bottom: 16px;
+}
+
+.date-main {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 37.33px;
+  font-weight: 400;
+  color: var(--ink-body);
+  text-transform: uppercase;
+  line-height: 1.39em;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.date-time {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 700;
+  color: var(--ink-body);
+  line-height: 1.39em;
+  margin-bottom: 16px;
+}
+
+/* Contador estilo TickCounter sobre el papel */
+.tickcounter-box {
+  width: 269px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.tc-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.tc-unit:not(:last-child)::after {
+  content: ':';
+  position: absolute;
+  right: -4px;
+  top: 2px;
+  font-family: 'RoxboroughCF', serif;
+  font-size: 28px;
+  color: var(--ink-charcoal);
+}
+
+.tc-val {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--ink-charcoal);
+  line-height: 1.1;
+}
+
+.tc-lbl {
+  font-family: 'Lato', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-body);
+  margin-top: 3px;
+}
+
+/* Botón rectangular minimalista con filete en Pan de Oro */
+.btn-editorial-rect {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 188.4px;
+  height: 38px;
+  border: 1.5px solid #b58936;
+  border-radius: 0;
+  background: rgba(255, 252, 244, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(249, 232, 169, 0.65), 0 2px 8px rgba(143, 104, 34, 0.1);
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: #5a4318;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 14px;
+}
+
+.btn-editorial-rect:hover {
+  background: var(--gold-leaf-gradient);
+  border-color: #8f6822;
+  color: #2b1d05;
+  box-shadow: 0 4px 14px rgba(181, 137, 54, 0.32);
+}
+
+/* ==========================================================================
+   SECCIÓN 4: CEREMONIA Y FIESTA (RECEPCIÓN VILLA VENECIA)
+   ========================================================================== */
+.ceremony-section {
+  padding: 24px 0 42px;
+}
+
+.ceremony-rings-img {
+  width: 135px;
+  height: 133px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 6px;
+}
+
+.section-script-title {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--ink-black);
+  line-height: 0.98em;
+  margin-bottom: 20px;
+}
+
+.ceremony-address {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 300;
+  color: var(--ink-deep);
+  line-height: 1.44em;
+  margin-bottom: 16px;
+  white-space: pre-line;
+}
+
+.location-btn-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   SECCIÓN 5: ITINERARIO (TIMELINE VERTICAL ALTERNADO CON ACUARELAS)
+   ========================================================================== */
+.itinerary-section {
+  padding: 26px 0 42px;
+}
+
+.itinerary-title {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--ink-black);
+  line-height: 0.62em;
+  margin-bottom: 36px;
+}
+
+.timeline-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 710px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 90px;
+  height: 466.5px;
+  width: 2px;
+  background: linear-gradient(180deg, #b58936 0%, #e5c473 50%, #b58936 100%);
+  transform: translateX(-50%);
+}
+
+.timeline-node {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold-leaf-gradient);
+  border: 2px solid #8f6822;
+  box-shadow: 0 0 0 3px rgba(249, 232, 169, 0.7), 0 2px 5px rgba(143, 104, 34, 0.3);
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.node-1 { top: 90px; }
+.node-2 { top: 249px; }
+.node-3 { top: 401px; }
+.node-4 { top: 551px; }
+
+.tl-item {
+  position: absolute;
+  width: 45%;
+  text-align: center;
+}
+
+.tl-left { left: 0; }
+.tl-right { right: 0; }
+.tl-item-1 { top: 0; }
+
+.tl-wash-wrap {
+  position: relative;
+  width: 181px;
+  height: 172px;
+  margin: 0 auto;
+}
+
+.tl-wash-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tl-rings-box-img {
+  position: relative;
+  z-index: 2;
+  width: 140px;
+  height: 137px;
+  margin: 18px auto 0;
+  object-fit: contain;
+  display: block;
+}
+
+.tl-item-2 { top: 145px; }
+
+.tl-plate-img {
+  width: 185px;
+  height: 185px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.tl-item-3 { top: 298px; }
+
+.tl-flutes-img {
+  width: 144px;
+  height: 177px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+}
+
+.tl-item-4 { top: 462px; }
+
+.tl-disco-wrap {
+  position: relative;
+  width: 189px;
+  height: 185px;
+  margin: 0 auto;
+}
+
+.tl-disco-img {
+  width: 175px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.tl-sparkles-img {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  width: 46px;
+  height: 86px;
+  object-fit: contain;
+}
+
+.tl-label {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 300;
+  color: var(--ink-deep);
+  line-height: 1.44em;
+}
+
+/* ==========================================================================
+   SECCIÓN 6: DRESS CODE + MUESTRAS DE ACUARELA ORIGINALES
+   ========================================================================== */
+.dresscode-section {
+  padding: 24px 0 42px;
+}
+
+.dresscode-title {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 53.33px;
+  font-weight: 400;
+  color: var(--ink-black);
+  line-height: 0.62em;
+  margin-bottom: 24px;
+}
+
+.dresscode-sub {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 400;
+  color: var(--ink-body);
+  line-height: 1.44em;
+  margin-bottom: 18px;
+}
+
+.dresscode-illustrations {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.img-dress {
+  width: 137px;
+  height: 238px;
+  object-fit: contain;
+}
+
+.img-suit {
+  width: 79px;
+  height: 238px;
+  object-fit: contain;
+}
+
+.dresscode-text {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 300;
+  color: var(--ink-body);
+  line-height: 1.44em;
+  max-width: 425px;
+  margin: 0 auto 18px;
+}
+
+.dresscode-avoid {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--ink-body);
+  margin-top: 14px;
+}
+
+.swatches-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.swatch-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.swatch-img {
+  width: 96px;
+  height: 75px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+}
+
+.swatch-name {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-charcoal);
+}
+
+/* ==========================================================================
+   SECCIÓN 7: MESA DE REGALOS (LLUVIA DE SOBRES)
+   ========================================================================== */
+.gifts-section {
+  padding: 24px 0 42px;
+}
+
+.gift-box-img {
+  width: 117px;
+  height: 133px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+}
+
+.gifts-title {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 53.33px;
+  font-weight: 400;
+  color: var(--ink-body);
+  line-height: 0.62em;
+  margin-bottom: 34px;
+}
+
+.gifts-note {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 300;
+  color: var(--ink-body);
+  line-height: 1.44em;
+  max-width: 401px;
+  margin: 0 auto 24px;
+}
+
+.gifts-accounts {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 300;
+  color: var(--ink-body);
+  line-height: 1.44em;
+  max-width: 401px;
+  margin: 0 auto;
+}
+
+.gift-account-item {
+  margin-bottom: 16px;
+}
+
+.gift-account-holder {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 18px;
+  color: #5a4318;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.copy-inline-btn {
+  display: inline-block;
+  margin: 6px 4px 4px;
+  padding: 5px 14px;
+  border: 1px solid #b58936;
+  background: rgba(255, 252, 244, 0.65);
+  box-shadow: inset 0 0 0 1px rgba(249, 232, 169, 0.6);
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6b4e19;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-inline-btn:hover {
+  background: var(--gold-leaf-gradient);
+  border-color: #8f6822;
+  color: #2b1d05;
+}
+
+/* ==========================================================================
+   SECCIÓN 8 & 9: QUERIDA FAMILIA Y AMIGOS (SOLO ADULTOS) + CONFIRMAR ASISTENCIA
+   ========================================================================== */
+.adults-section {
+  padding: 26px 0 46px;
+}
+
+.adults-title {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 54px;
+  font-weight: 400;
+  color: #544134;
+  line-height: 1.08em;
+  margin-bottom: 22px;
+}
+
+.adults-text {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 20.5px;
+  font-weight: 400;
+  color: #7d6754;
+  line-height: 1.48em;
+  max-width: 410px;
+  margin: 0 auto 30px;
+}
+
+.rsvp-direct-block {
+  margin: 6px auto 30px;
+  text-align: center;
+}
+
+.btn-confirmar-script-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 265px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #957860 0%, #846851 100%);
+  border: 1.5px solid #c59b45;
+  box-shadow:
+    inset 0 0 0 1px rgba(249, 232, 169, 0.38),
+    0 8px 20px rgba(84, 65, 52, 0.22);
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-weight: 400;
+  font-size: 31px;
+  line-height: 1.1;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn-confirmar-script-box:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, #83664f 0%, #715640 100%);
+  border-color: #d4af37;
+  box-shadow:
+    inset 0 0 0 1px rgba(249, 232, 169, 0.65),
+    0 12px 26px rgba(84, 65, 52, 0.32);
+  color: #ffffff;
+}
+
+.rsvp-confirma-sub {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8c725c;
+  margin-top: 24px;
+}
+
+.rsvp-deadline-note {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 16.5px;
+  color: #6b5847;
+  margin-top: 8px;
+}
+
+.btn-confirmar-rect {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  height: 48px;
+  padding: 0 24px;
+  border: 2px solid #9a7229;
+  border-radius: 0;
+  background: var(--gold-leaf-gradient);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 248, 220, 0.75),
+    0 6px 18px rgba(143, 104, 34, 0.24);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 15.5px;
+  letter-spacing: 0.1em;
+  color: #2b1d05;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-confirmar-rect:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 248, 220, 0.9),
+    0 10px 24px rgba(143, 104, 34, 0.35);
+  color: #140d02;
+}
+
+/* Panel Desplegable de Formulario RSVP sobre el papel */
+.editorial-rsvp-drawer {
+  max-width: 410px;
+  margin: 24px auto 0;
+  padding: 22px 20px;
+  border: 1px solid rgba(64, 64, 64, 0.45);
+  background: rgba(253, 246, 236, 0.55);
+  text-align: left;
+}
+
+.editorial-form-group {
+  margin-bottom: 16px;
+}
+
+.editorial-form-group label {
+  display: block;
+  font-family: 'RoxboroughCF', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink-charcoal);
+  margin-bottom: 6px;
+}
+
+.editorial-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--ink-charcoal);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: 'RoxboroughCF', serif;
+  font-size: 16px;
+  color: var(--ink-deep);
+  outline: none;
+}
+
+.editorial-input:focus {
+  background: #ffffff;
+  border-color: #000000;
+}
+
+.editorial-radio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.editorial-radio-btn {
+  padding: 10px 8px;
+  border: 1px solid var(--ink-charcoal);
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  color: var(--ink-charcoal);
+  background: transparent;
+  transition: all 0.2s;
+}
+
+.editorial-radio-btn.active {
+  background: var(--ink-charcoal);
+  color: #ffffff;
+}
+
+/* Tarjeta Sobre Digital PDF integrada en la invitación con marco de Pan de Oro */
+.editorial-envelope-card {
+  max-width: 400px;
+  margin: 28px auto 0;
+  padding: 24px 20px;
+  background:
+    linear-gradient(rgba(255, 253, 248, 0.88), rgba(252, 247, 235, 0.88)) padding-box,
+    var(--gold-leaf-gradient) border-box;
+  border: 3px solid transparent;
+  box-shadow:
+    inset 0 0 0 1px rgba(197, 155, 69, 0.45),
+    0 10px 26px rgba(90, 65, 20, 0.14);
+  text-align: center;
+}
+
+.editorial-envelope-card-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wax-gold-dark);
+  margin-bottom: 8px;
+}
+
+.editorial-envelope-card-title {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink-deep);
+  margin-bottom: 8px;
+}
+
+.editorial-envelope-card-desc {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 15.5px;
+  color: var(--ink-body);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.editorial-envelope-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   SECCIÓN 10: CIERRE ("¡Te esperamos! Carlos y Jackie" + RETRATO ACUARELA 2)
+   ========================================================================== */
+.closing-section {
+  padding: 20px 0 46px;
+  text-align: center;
+}
+
+.closing-wait {
+  font-family: 'RoxboroughCF', serif;
+  font-size: 21.33px;
+  font-weight: 300;
+  color: var(--ink-charcoal);
+  line-height: 1.44em;
+  margin-bottom: 8px;
+}
+
+.closing-names {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 55.47px;
+  font-weight: 400;
+  color: var(--ink-charcoal);
+  line-height: 1.05em;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   SECCIÓN INTERMEDIA: NUESTROS MOMENTOS EN ACUARELA
+   ========================================================================== */
+.moments-section {
+  padding: 30px 0 24px;
+}
+
+.moments-title {
+  font-family: 'Eyesome Script', 'Great Vibes', cursive;
+  font-size: 53.33px;
+  font-weight: 400;
+  color: var(--ink-body);
+  line-height: 1.16em;
+  margin-bottom: 14px;
+}
+
+.moments-portrait-frame {
+  width: 100%;
+  max-width: 440px;
+  margin: 8px auto 14px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.moments-photo {
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.moments-portrait-frame:hover .moments-photo {
+  transform: scale(1.02);
+}
+
+.watercolor-portrait-2 {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  margin: 12px auto 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+}
+
+.watercolor-portrait-2:hover {
+  transform: scale(1.02);
+}
+
+/* Lightbox modal para apreciar las acuarelas a pantalla completa */
+.watercolor-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(19, 19, 19, 0.90);
+  backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.watercolor-lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.watercolor-lightbox-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.watercolor-lightbox-img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.watercolor-lightbox-caption {
+  margin-top: 14px;
+  font-family: 'Eyesome Script', cursive;
+  font-size: 34px;
+  color: #f5f2eb;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.watercolor-lightbox-close {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 10px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.watercolor-lightbox-close:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.sobre-discreet-footer {
+  margin-top: 28px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.sobre-discreet-footer a {
+  font-family: 'Lato', sans-serif;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(64, 64, 64, 0.55);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(64, 64, 64, 0.35);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.sobre-discreet-footer a:hover {
+  color: var(--ink-charcoal);
+  border-bottom-color: var(--ink-charcoal);
+}
+
+@media (max-width: 480px) {
+  .couple-names-hero {
+    font-size: 54px;
+  }
+  .section-script-title,
+  .itinerary-title,
+  .dresscode-title,
+  .gifts-title,
+  .adults-title,
+  .rsvp-title,
+  .closing-names {
+    font-size: 46px;
+  }
+  .date-main {
+    font-size: 30px;
+  }
+}
+
+/* ==========================================================================
+   PASARELA & CENTRO DE CONTROL DE AUDIO (VINTAGE WEDDING AESTHETIC)
+   Diseñado para NO obstruir la lectura de la invitación.
+   ========================================================================== */
+.runway-scroll-widget {
+  position: fixed;
+  z-index: 1500;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Lato', sans-serif;
+}
+
+.runway-scroll-widget.folded,
+.runway-scroll-widget.minimized {
+  bottom: 24px;
+  right: 24px;
+  left: auto;
+  top: auto;
+  transform: none;
+}
+
+.runway-scroll-widget.folded .runway-active-bar,
+.runway-scroll-widget.minimized .runway-active-bar {
+  display: none;
+}
+
+.runway-btn-start {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(253, 246, 236, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 145, 70, 0.55);
+  border-radius: 999px;
+  color: #404040;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  box-shadow: 0 6px 20px rgba(64, 50, 25, 0.16);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.runway-btn-start:hover {
+  background: #ffffff;
+  border-color: #b89146;
+  box-shadow: 0 8px 24px rgba(184, 145, 70, 0.28);
+  transform: translateY(-2px);
+  color: #131313;
+}
+
+.runway-icon-magic {
+  font-size: 15px;
+  animation: magicSparkle 2.5s infinite alternate ease-in-out;
+}
+
+.runway-mini-music-icon {
+  font-size: 13px;
+  color: #b89146;
+}
+
+@keyframes magicSparkle {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.85; }
+  100% { transform: scale(1.2) rotate(12deg); opacity: 1; }
+}
+
+.runway-scroll-widget.active:not(.minimized) .runway-btn-start {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .runway-scroll-widget.active:not(.minimized) {
+    right: 28px;
+    bottom: 28px;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 370px;
+    max-width: calc(100vw - 56px);
+  }
+}
+
+@media (max-width: 767px) {
+  .runway-scroll-widget.active:not(.minimized).dock-bottom {
+    bottom: 12px;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    max-width: 420px;
+  }
+
+  .runway-scroll-widget.active:not(.minimized).dock-top {
+    top: 12px;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    max-width: 420px;
+  }
+
+  .runway-scroll-widget.folded,
+  .runway-scroll-widget.minimized {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+.runway-active-bar {
+  background: rgba(253, 246, 236, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(184, 145, 70, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(64, 50, 25, 0.22);
+  overflow: hidden;
+  animation: barSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes barSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.runway-progress-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(184, 145, 70, 0.16);
+  position: relative;
+}
+
+.runway-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #b89146, #d4af37);
+  transition: width 0.15s ease-out;
+}
+
+.runway-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 6px;
+  border-bottom: 1px solid rgba(184, 145, 70, 0.14);
+}
+
+.runway-title-col {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.runway-badge {
+  font-family: 'RoxboroughCF', Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  color: #404040;
+  white-space: nowrap;
+}
+
+.runway-progress-pct {
+  font-size: 11px;
+  font-weight: 700;
+  color: #b89146;
+  background: rgba(184, 145, 70, 0.12);
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+.runway-window-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.runway-mini-btn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid rgba(184, 145, 70, 0.25);
+  background: transparent;
+  color: #666666;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.runway-mini-btn:hover {
+  background: rgba(184, 145, 70, 0.15);
+  color: #131313;
+  border-color: #b89146;
+}
+
+.runway-btn-close-danger:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.runway-section-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8c734b;
+  min-width: 58px;
+}
+
+.runway-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px;
+  gap: 10px;
+  border-bottom: 1px dashed rgba(184, 145, 70, 0.15);
+}
+
+.runway-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.runway-ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #b89146;
+  background: #b89146;
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.runway-ctrl-btn:hover {
+  background: #9d7b37;
+  border-color: #9d7b37;
+}
+
+.runway-speed-group {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(184, 145, 70, 0.38);
+  border-radius: 20px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.runway-speed-btn {
+  padding: 4px 9px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #555555;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.1;
+}
+
+.runway-speed-btn:hover {
+  background: rgba(184, 145, 70, 0.14);
+  color: #131313;
+}
+
+.runway-speed-btn.active {
+  background: var(--gold-leaf-gradient);
+  color: #2b1d05;
+  border-color: #9a7229;
+  box-shadow: 0 1px 4px rgba(143, 104, 34, 0.25);
+}
+
+.runway-audio-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px 9px;
+  gap: 10px;
+}
+
+.runway-audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.runway-audio-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 145, 70, 0.4);
+  background: rgba(255, 255, 255, 0.7);
+  color: #404040;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.runway-audio-btn:hover {
+  background: #ffffff;
+  border-color: #b89146;
+  color: #b89146;
+  transform: scale(1.05);
+}
+
+.runway-volume-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 4px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(184, 145, 70, 0.2);
+}
+
+.runway-volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 65px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(184, 145, 70, 0.25);
+  outline: none;
+  cursor: pointer;
+}
+
+.runway-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #b89146;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease;
+}
+
+.runway-volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+.runway-volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #b89146;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.runway-volume-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #726243;
+  min-width: 26px;
+  text-align: right;
+}
+

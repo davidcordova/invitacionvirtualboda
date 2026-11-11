@@ -1,0 +1,137 @@
+/* Base Reset & Core Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream-bg);
+  color: var(--color-navy-900);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-gold-50);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-300);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-500);
+}
+
+/* App Main Container */
+.app-main {
+  flex: 1;
+  position: relative;
+  width: 100%;
+}
+
+/* Common UI Elements & Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-gold-500), var(--color-gold-600));
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(196, 142, 51, 0.25);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-gold-600), var(--color-gold-700));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(196, 142, 51, 0.35);
+}
+
+.btn-secondary {
+  background: var(--color-gold-50);
+  color: var(--color-gold-800);
+  border: 1px solid var(--color-gold-300);
+}
+.btn-secondary:hover {
+  background: var(--color-gold-100);
+  border-color: var(--color-gold-400);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+}
+.btn-whatsapp:hover {
+  background: #1EBE5D;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toast {
+  background: #FFFFFF;
+  border-left: 4px solid var(--color-gold-500);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--color-navy-900);
+  min-width: 280px;
+  max-width: 420px;
+  animation: toastSlideIn 0.3s ease-out;
+}
+
+.toast.toast-success {
+  border-left-color: var(--color-emerald-500);
+}
+.toast.toast-error {
+  border-left-color: var(--color-rose-500);
+}
+.toast.toast-warning {
+  border-left-color: var(--color-amber-500);
+}
+
+@keyframes toastSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
