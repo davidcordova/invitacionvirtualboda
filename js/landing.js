@@ -5,7 +5,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cfg = window.WEDDING_CONFIG || {};
   const audioEngine = window.audioEngine;
-  const autoScrollController = window.autoScrollController;
 
   // 1. Real-time Countdown Timer
   const targetDateStr = cfg.event_iso_countdown || '2026-12-26T19:00:00-05:00';
@@ -58,12 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   dalePlayWidget?.addEventListener('click', () => {
-    if (autoScrollController && !autoScrollController.isActive) {
-      audioEngine?.play().catch(() => {});
-      autoScrollController.start(false);
-    } else {
-      audioEngine?.toggleMusic();
-    }
+    audioEngine?.toggleMusic();
   });
 
   // 3. Copy Bank Accounts / Yape Buttons
@@ -147,10 +141,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. Initialize Auto-Scroll Pasarela & Synchronized Tour
-  if (autoScrollController) {
-    autoScrollController.init(document.getElementById('app-root'));
-    autoScrollController.startSynchronizedTour({ delayMs: 600 });
+  // 7. Iniciar música automáticamente al cargar (o al primer toque/deslizamiento del usuario)
+  if (audioEngine) {
+    audioEngine.play().then(started => {
+      if (!started) {
+        audioEngine.armAutoplayOnFirstGesture();
+      }
+    }).catch(() => {
+      audioEngine.armAutoplayOnFirstGesture();
+    });
   }
 });
 

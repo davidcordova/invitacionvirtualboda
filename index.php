@@ -265,21 +265,44 @@ header('Permissions-Policy: autoplay=(self *)');
             </div>
 
             <div class="dresscode-avoid">
-              Evitar los colores: blanco, ivory y beige.
+              Evitar los colores: blanco, marfil y beige.
             </div>
 
-            <div class="swatches-row">
-              <div class="swatch-wrap">
-                <img src="assets/swatch-white.png" class="swatch-img swatch-fallback-white" alt="Blanco">
-                <span class="swatch-name">Blanco</span>
+            <div class="avoid-palette-card">
+              <div class="avoid-palette-header">
+                <span class="avoid-palette-pill">Paleta de colores</span>
               </div>
-              <div class="swatch-wrap">
-                <img src="assets/swatch-ivory.png" class="swatch-img swatch-fallback-ivory" alt="Ivory">
-                <span class="swatch-name">Ivory</span>
+
+              <div class="avoid-palette-grid">
+                <div class="avoid-swatch-item">
+                  <div class="avoid-swatch-box swatch-color-blanco"></div>
+                  <div class="avoid-swatch-label">
+                    <span class="avoid-swatch-title">Blanco</span>
+                    <span class="avoid-swatch-hex">(#FFFFFF)</span>
+                  </div>
+                </div>
+
+                <div class="avoid-swatch-item">
+                  <div class="avoid-swatch-box swatch-color-marfil"></div>
+                  <div class="avoid-swatch-label">
+                    <span class="avoid-swatch-title">Marfil</span>
+                    <span class="avoid-swatch-hex">(#FFFFF0)</span>
+                  </div>
+                </div>
+
+                <div class="avoid-swatch-item">
+                  <div class="avoid-swatch-box swatch-color-beige"></div>
+                  <div class="avoid-swatch-label">
+                    <span class="avoid-swatch-title">Beige</span>
+                    <span class="avoid-swatch-hex">(#F5F5DC)</span>
+                  </div>
+                </div>
               </div>
-              <div class="swatch-wrap">
-                <img src="assets/swatch-beige.png" class="swatch-img swatch-fallback-beige" alt="Beige">
-                <span class="swatch-name">Beige</span>
+
+              <div class="avoid-palette-footer">
+                <span class="avoid-palette-line"></span>
+                <span class="avoid-palette-heart">♥</span>
+                <span class="avoid-palette-line"></span>
               </div>
             </div>
           </section>
@@ -335,11 +358,11 @@ header('Permissions-Policy: autoplay=(self *)');
           </section>
 
           <!-- ==========================================================================
-               SECCIÓN 7: MESA DE REGALOS (LLUVIA DE SOBRES)
+               SECCIÓN 7: OBSEQUIO (LLUVIA DE SOBRES)
                ========================================================================== -->
           <section class="gifts-section">
             <img src="assets/gift-box-sage.png" class="gift-box-img" alt="Caja de regalo">
-            <div class="gifts-title">Mesa de regalos</div>
+            <div class="gifts-title">Obsequio</div>
 
             <div class="gifts-note">
               Estamos felices con tu compañía, y si deseas puedes contribuir a nuestros proyectos y sueños como familia.
@@ -470,7 +493,6 @@ header('Permissions-Policy: autoplay=(self *)');
 
   <!-- Scripts de la Invitación -->
   <script src="js/audio.js"></script>
-  <script src="js/autoScroll.js"></script>
   <script src="js/envelope.js"></script>
   <script src="js/landing.js"></script>
 </body>

@@ -916,35 +916,103 @@
   margin-top: 14px;
 }
 
-.swatches-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-top: 16px;
+.avoid-palette-card {
+  max-width: 410px;
+  margin: 18px auto 0;
+  padding: 18px 14px 14px;
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 6px 18px rgba(84, 65, 52, 0.08);
 }
 
-.swatch-wrap {
+.avoid-palette-pill {
+  display: inline-block;
+  background: #eadccf;
+  color: #3a2218;
+  font-family: 'Playfair Display', 'RoxboroughCF', Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  padding: 6px 28px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.avoid-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.avoid-swatch-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.avoid-swatch-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  border: 1px solid #d8d2c9;
+  margin-bottom: 8px;
+}
+
+.swatch-color-blanco {
+  background-color: #FFFFFF;
+}
+
+.swatch-color-marfil {
+  background-color: #FAF6E0;
+}
+
+.swatch-color-beige {
+  background-color: #DECAB2;
+}
+
+.avoid-swatch-label {
+  background: #f5ece4;
+  border-radius: 12px;
+  padding: 8px 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
 }
 
-.swatch-img {
-  width: 96px;
-  height: 75px;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+.avoid-swatch-title {
+  font-family: 'Playfair Display', 'RoxboroughCF', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2b1810;
+  line-height: 1.15;
 }
 
-.swatch-name {
+.avoid-swatch-hex {
   font-family: 'Lato', sans-serif;
-  font-size: 11px;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--ink-charcoal);
+  font-size: 12px;
+  font-weight: 400;
+  color: #4a3528;
+  margin-top: 2px;
+}
+
+.avoid-palette-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.avoid-palette-line {
+  flex: 1;
+  height: 1.5px;
+  background: #dcc7b4;
+}
+
+.avoid-palette-heart {
+  color: #d6bda6;
+  font-size: 20px;
+  line-height: 1;
 }
 
 /* ==========================================================================
